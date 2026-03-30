@@ -1,0 +1,54 @@
+# =============================================================================
+# Agentic AI Framework — Requirements
+# =============================================================================
+# Core dependencies required for the framework to run.
+# For optional provider-specific dependencies, see pyproject.toml extras.
+#
+# Install core only:
+#   pip install -r requirements.txt
+#
+# Install with specific providers:
+#   pip install -e ".[openai,chroma]"
+#
+# Install everything:
+#   pip install -e ".[all]"
+
+# --- Core ---
+requests>=2.31.0
+pydantic>=2.0.0
+
+# --- LLM Providers (uncomment what you need) ---
+# openai>=1.0.0          # OpenAI GPT models
+# google-generativeai>=0.3.0  # Google Gemini
+# anthropic>=0.18.0      # Anthropic Claude
+# groq>=0.4.0            # Groq (LLaMA, Mixtral)
+
+# --- Embedding Providers ---
+# voyageai>=0.1.0        # Voyage AI embeddings (for Claude users)
+
+# --- Vector Stores (uncomment what you need) ---
+# chromadb>=0.4.0        # ChromaDB (local/in-memory)
+# pinecone-client>=3.0.0 # Pinecone (managed cloud)
+# psycopg2-binary>=2.9.0 # PostgreSQL driver for PGVector
+# pgvector>=0.2.0        # PGVector Python bindings
+# faiss-cpu>=1.7.0       # FAISS (in-memory, CPU)
+# numpy>=1.24.0          # Required by FAISS
+
+# --- RAG Pipeline ---
+# pymupdf>=1.23.0        # PDF parsing (PyMuPDF/fitz)
+# Pillow>=10.0.0         # Image processing for PDF images
+# beautifulsoup4>=4.12.0 # HTML parsing
+
+# --- API Server ---
+# fastapi>=0.100.0       # FastAPI web framework
+# uvicorn>=0.23.0        # ASGI server
+# python-multipart>=0.0.6 # File upload support
+
+# --- MCP Connectors ---
+# beautifulsoup4>=4.12.0 # Web scraping (shared with RAG)
+
+# --- Development ---
+# ruff>=0.1.0            # Linting and formatting
+# mypy>=1.5.0            # Type checking
+# pytest>=7.4.0          # Testing
+# pytest-asyncio>=0.21.0 # Async test support
