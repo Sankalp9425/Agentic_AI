@@ -30,6 +30,7 @@ classifiers = [
 ]
 dependencies = [
     "requests>=2.31.0",
+    "pydantic>=2.0.0",
 ]
 
 [project.optional-dependencies]
@@ -45,6 +46,20 @@ chroma = ["chromadb>=0.4.0"]
 pinecone = ["pinecone-client>=3.0.0"]
 pgvector = ["psycopg2-binary>=2.9.0", "pgvector>=0.2.0"]
 faiss = ["faiss-cpu>=1.7.0", "numpy>=1.24.0"]
+
+# RAG pipeline extras.
+rag = [
+    "pymupdf>=1.23.0",
+    "Pillow>=10.0.0",
+    "beautifulsoup4>=4.12.0",
+]
+
+# API server extras.
+api = [
+    "fastapi>=0.100.0",
+    "uvicorn>=0.23.0",
+    "python-multipart>=0.0.6",
+]
 
 # MCP connector extras.
 scraper = ["beautifulsoup4>=4.12.0"]
@@ -76,6 +91,11 @@ all = [
     "numpy>=1.24.0",
     "beautifulsoup4>=4.12.0",
     "pyyaml>=6.0",
+    "pymupdf>=1.23.0",
+    "Pillow>=10.0.0",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.23.0",
+    "python-multipart>=0.0.6",
 ]
 
 # Development extras.
