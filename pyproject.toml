@@ -1,0 +1,113 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-ai"
+version = "0.1.0"
+description = "A comprehensive Python framework for building advanced AI agents with support for RAG, ReAct, Hierarchical, and Planning paradigms."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+authors = [
+    {name = "Agentic AI Contributors"},
+]
+keywords = [
+    "ai", "agents", "llm", "rag", "react", "hierarchical",
+    "openai", "gemini", "claude", "groq", "vector-database",
+    "mcp", "embeddings", "faiss", "chroma", "pinecone", "pgvector",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Typing :: Typed",
+]
+dependencies = [
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+# Individual provider extras for installing only what you need.
+openai = ["openai>=1.0.0", "tiktoken>=0.5.0"]
+gemini = ["google-generativeai>=0.3.0"]
+claude = ["anthropic>=0.18.0"]
+groq = ["groq>=0.4.0"]
+voyage = ["voyageai>=0.2.0"]
+
+# Vector store extras.
+chroma = ["chromadb>=0.4.0"]
+pinecone = ["pinecone-client>=3.0.0"]
+pgvector = ["psycopg2-binary>=2.9.0", "pgvector>=0.2.0"]
+faiss = ["faiss-cpu>=1.7.0", "numpy>=1.24.0"]
+
+# MCP connector extras.
+scraper = ["beautifulsoup4>=4.12.0"]
+
+# Convenience groups.
+all-llms = [
+    "openai>=1.0.0", "tiktoken>=0.5.0",
+    "google-generativeai>=0.3.0",
+    "anthropic>=0.18.0",
+    "groq>=0.4.0",
+]
+all-vectorstores = [
+    "chromadb>=0.4.0",
+    "pinecone-client>=3.0.0",
+    "psycopg2-binary>=2.9.0",
+    "faiss-cpu>=1.7.0",
+    "numpy>=1.24.0",
+]
+all = [
+    "openai>=1.0.0", "tiktoken>=0.5.0",
+    "google-generativeai>=0.3.0",
+    "anthropic>=0.18.0",
+    "groq>=0.4.0",
+    "voyageai>=0.2.0",
+    "chromadb>=0.4.0",
+    "pinecone-client>=3.0.0",
+    "psycopg2-binary>=2.9.0",
+    "faiss-cpu>=1.7.0",
+    "numpy>=1.24.0",
+    "beautifulsoup4>=4.12.0",
+    "pyyaml>=6.0",
+]
+
+# Development extras.
+dev = [
+    "ruff>=0.3.0",
+    "mypy>=1.8.0",
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Sankalp9425/Agentic_AI"
+Repository = "https://github.com/Sankalp9425/Agentic_AI"
+Issues = "https://github.com/Sankalp9425/Agentic_AI/issues"
+
+[tool.setuptools.packages.find]
+include = ["agentic_ai*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "SIM"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
